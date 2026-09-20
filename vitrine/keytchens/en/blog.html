@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            if (localStorage.getItem("selectedLanguage") === null) {
+                fetch("https://ipwho.is/")
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.country_code === "FR") {
+                            localStorage.setItem('selectedLanguage', 'fr')
+                            window.location.href = "/blog/blog.html";
+                        } else {
+                            localStorage.setItem('selectedLanguage', 'en')
+                        }
+                    })
+                    .catch(() => {
+                        localStorage.setItem('selectedLanguage', 'en')
+                    });
+            }
+        })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEENPYW1B2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YEENPYW1B2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keytchens Blog - Tips to Boost Your Restaurant</title>
+    <link rel="canonical" href="https://www.keytchens.com/en/blog/blog.html" />
+    <meta name="description" content="Tips, news and strategies to optimize your Uber Eats and Deliveroo deliveries and boost your restaurant's revenue.">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta property="og:title" content="Keytchens Blog - Tips for Your Restaurant">
+    <meta property="og:description" content="Tips, news and strategies to optimize your deliveries and boost your revenue.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.keytchens.com/en/blog/blog.html">
+    <link rel="alternate" hreflang="en" href="https://www.keytchens.com/en/blog/blog.html" />
+    <link rel="alternate" hreflang="fr" href="https://www.keytchens.com/blog/blog.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.keytchens.com/blog/blog.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/keytchens-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/keytchens-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/keytchens-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/src/shared/styles/output.css" rel="stylesheet">
+    <base href="/" target="_self">
+    <style>
+        /* Card fade-in animation */
+        @keyframes kc-fade-up {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .kc-fade-up {
+            opacity: 0;
+            animation: kc-fade-up 0.7s ease-out forwards;
+        }
+
+        /* Full content expansion */
+        .kc-full-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+        }
+        .kc-full-content > div {
+            overflow: hidden;
+        }
+        .kc-full-content.kc-open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: 1.25rem;
+        }
+        .kc-toggle-icon {
+            transition: transform 0.25s ease;
+        }
+        .kc-toggle-open .kc-toggle-icon {
+            transform: rotate(90deg);
+        }
+
+        /* Clamp lines (title/excerpt) so all cards share the same height */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .kc-fade-up { animation: none; opacity: 1; }
+            .kc-full-content, .kc-toggle-icon { transition: none; }
+        }
+    </style>
+</head>
+<body class="font-public bg-white dark:bg-gray-900">
+
+<!-- ============================================================ -->
+<!-- HERO                                                          -->
+<!-- ============================================================ -->
+<section class="relative bg-darkblue overflow-hidden">
+    <div class="h-96 relative">
+        <div id="navbar-placeholder" style="position: relative; z-index: 50;"></div>
+
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow-delay"></div>
+        </div>
+
+        <div class="flex justify-center mt-14 md:mt-14 relative px-4">
+            <div class="relative text-center w-full md:w-3/4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+                    The Keytchens Blog
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                    The best strategies to grow your restaurant and boost your performance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ARTICLES GRID                                                 -->
+<!-- ============================================================ -->
+<main>
+    <section class="bg-white dark:bg-gray-900">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto 2xl:py-24 2xl:px-6">
+            <div id="blog-grid" class="grid grid-cols-1 gap-8 sm:grid-cols-2 2xl:grid-cols-3 items-start">
+                <!-- Article cards are injected here by JS -->
+            </div>
+
+            <!-- Empty state -->
+            <div id="blog-empty" class="hidden py-16 text-center text-gray-500 dark:text-gray-400">
+                No articles yet. Check back soon!
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+<script src="/src/widgets/navbar/navbar.js"></script>
+<script src="/src/shared/lang/translate.js"></script>
+<script type="module" src="/src/app/index.js"></script>
+
+<!-- ============================================================ -->
+<!-- BLOG LOGIC                                                    -->
+<!-- Articles are fetched from the Symfony/MongoDB API.            -->
+<!-- Clicking "Read article" expands the full text directly        -->
+<!-- inside the card (no separate page or modal).                  -->
+<!-- ============================================================ -->
+<script type="module">
+    const API_BASE = 'http://localhost:8000/api'; // adjust for production
+
+    // --- 1. DATA SOURCE ---
+    async function getArticles() {
+        try {
+            const res = await fetch(`${API_BASE}/articles?lang=en`);
+            if (!res.ok) return [];
+            return await res.json();
+        } catch (e) {
+            console.error('API error:', e);
+            return [];
+        }
+    }
+
+    // --- 2. UTILITIES ---
+    function formatDate(isoDate) {
+        return new Date(isoDate).toLocaleDateString('en-US', {
+            day: 'numeric', month: 'long', year: 'numeric'
+        });
+    }
+
+    function articleCardHTML(article, index) {
+        return `
+            <article
+               class="kc-fade-up flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/30 dark:bg-gray-800 dark:border-gray-700"
+               style="animation-delay: ${0.05 * index}s">
+                <div class="relative overflow-hidden h-48">
+                    <img src="${article.image}" alt="${article.title}"
+                         class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkblue/30 via-transparent to-transparent"></div>
+                </div>
+                <div class="flex flex-col flex-1 p-6">
+                    <time datetime="${article.date}" class="mb-3 text-xs font-medium text-gray-400 dark:text-gray-500">
+                        ${formatDate(article.date)}
+                    </time>
+                    <h3 class="mb-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white line-clamp-2">
+                        ${article.title}
+                    </h3>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                        ${article.excerpt}
+                    </p>
+
+                    <!-- Full content, collapsed by default -->
+                    <div class="kc-full-content" data-content-wrap>
+                        <div class="prose prose-sm prose-gray dark:prose-invert max-w-none text-sm text-gray-500 dark:text-gray-400"
+                             data-content-body></div>
+                    </div>
+
+                    <button type="button"
+                            class="kc-toggle-btn mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary self-start"
+                            data-slug="${article.slug}">
+                        <span data-toggle-label>Read article</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="kc-toggle-icon w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </article>
+        `;
+    }
+
+    // --- 3. GRID RENDERING ---
+    async function renderBlog() {
+        const grid = document.getElementById('blog-grid');
+        const empty = document.getElementById('blog-empty');
+
+        const articles = await getArticles();
+
+        if (!articles.length) {
+            empty.classList.remove('hidden');
+            return;
+        }
+
+        grid.innerHTML = articles.map(articleCardHTML).join('');
+
+        // Keep each article's full content in memory (already loaded with the list)
+        const articlesBySlug = Object.fromEntries(articles.map(a => [a.slug, a]));
+
+        grid.querySelectorAll('.kc-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => toggleArticle(btn, articlesBySlug[btn.dataset.slug]));
+        });
+    }
+
+    // --- 4. "READ MORE / READ LESS" TOGGLE ---
+    function toggleArticle(btn, article) {
+        const card = btn.closest('article');
+        const wrap = card.querySelector('[data-content-wrap]');
+        const body = card.querySelector('[data-content-body]');
+        const label = btn.querySelector('[data-toggle-label]');
+        const isOpen = wrap.classList.contains('kc-open');
+
+        if (isOpen) {
+            wrap.classList.remove('kc-open');
+            btn.classList.remove('kc-toggle-open');
+            label.textContent = "Read article";
+            return;
+        }
+
+        // Fill content only on first expand
+        if (!body.innerHTML) {
+            body.innerHTML = article.content || "<p>Content not available.</p>";
+        }
+
+        wrap.classList.add('kc-open');
+        btn.classList.add('kc-toggle-open');
+        label.textContent = "Read less";
+    }
+
+    // --- 5. INIT ---
+    renderBlog();
+</script>
+</body>
+</html>

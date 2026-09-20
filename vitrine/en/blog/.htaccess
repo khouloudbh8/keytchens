@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /en/blog/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécrire /en/blog/SLUG vers article.php?slug=SLUG
+RewriteRule ^([^/]+)/?$ article.php?slug=$1 [L,QSA]

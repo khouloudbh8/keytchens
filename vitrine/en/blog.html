@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function() {
+            if (localStorage.getItem("selectedLanguage") === null) {
+                fetch("https://ipwho.is/")
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.country_code === "FR") {
+                            localStorage.setItem('selectedLanguage', 'fr')
+                            window.location.href = "/blog/blog.html";
+                        } else {
+                            localStorage.setItem('selectedLanguage', 'en')
+                        }
+                    })
+                    .catch(() => {
+                        localStorage.setItem('selectedLanguage', 'en')
+                    });
+            }
+        })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEENPYW1B2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YEENPYW1B2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keytchens Blog - Tips to Boost Your Restaurant</title>
+    <link rel="canonical" href="https://www.keytchens.com/en/blog/blog.html" />
+    <meta name="description" content="Tips, news and strategies to optimize your Uber Eats and Deliveroo deliveries and boost your restaurant's revenue.">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta property="og:title" content="Keytchens Blog - Tips for Your Restaurant">
+    <meta property="og:description" content="Tips, news and strategies to optimize your deliveries and boost your revenue.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.keytchens.com/en/blog/blog.html">
+    <link rel="alternate" hreflang="en" href="https://www.keytchens.com/en/blog/blog.html" />
+    <link rel="alternate" hreflang="fr" href="https://www.keytchens.com/blog/blog.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.keytchens.com/blog/blog.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/keytchens-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/keytchens-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/keytchens-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/src/shared/styles/output.css" rel="stylesheet">
+    <style>
+        /* Card fade-in animation */
+        @keyframes kc-fade-up {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .kc-fade-up {
+            opacity: 0;
+            animation: kc-fade-up 0.7s ease-out forwards;
+        }
+
+        /* Clamp lines (title/excerpt) so all cards share the same height */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .kc-fade-up { animation: none; opacity: 1; }
+        }
+
+        /* --- Share buttons --- */
+        .kc-share-btn {
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            color: #9ca3af;
+            background: transparent;
+            transition: all .2s ease;
+        }
+        .kc-share-btn:hover {
+            transform: translateY(-2px);
+        }
+        .kc-share-fb:hover {
+            background: #1877F2;
+            color: #fff;
+        }
+        .kc-share-li:hover {
+            background: #0A66C2;
+            color: #fff;
+        }
+        .kc-share-ig:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #fff;
+        }
+
+        /* Confirmation toast (Instagram link copy) */
+        #kc-toast {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #111827;
+            color: #fff;
+            padding: .6rem 1.2rem;
+            border-radius: .5rem;
+            font-size: .875rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .25s ease;
+            z-index: 100;
+            white-space: nowrap;
+            max-width: 90vw;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #kc-toast.kc-show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* --- Skeleton loader (loading placeholder cards) --- */
+        .kc-skeleton {
+            position: relative;
+            overflow: hidden;
+            background-color: #e5e7eb;
+        }
+        .dark .kc-skeleton {
+            background-color: #374151;
+        }
+        .kc-skeleton::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+            animation: kc-shimmer 1.5s infinite;
+        }
+        .dark .kc-skeleton::after {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+        }
+        @keyframes kc-shimmer {
+            100% { transform: translateX(100%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .kc-skeleton::after { animation: none; }
+        }
+    </style>
+</head>
+<body class="font-public bg-white dark:bg-gray-900">
+<section class="relative bg-darkblue overflow-hidden">
+    <div class="h-96 relative">
+        <div id="navbar-placeholder" style="position: relative; z-index: 50;"></div>
+
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow-delay"></div>
+        </div>
+
+        <div class="flex justify-center mt-14 md:mt-14 relative px-4">
+            <div class="relative text-center w-full md:w-3/4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+                    The Keytchens Blog
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                    The best strategies to grow your restaurant and boost your performance.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="bg-white dark:bg-gray-900">
+        <div class="max-w-screen-xl px-4 py-16 mx-auto 2xl:py-24 2xl:px-6">
+            <div id="blog-grid" class="grid grid-cols-1 gap-8 sm:grid-cols-2 items-start">
+                <!-- Article cards (or loading skeletons) are injected here by JS -->
+            </div>
+
+            <!-- Empty state -->
+            <div id="blog-empty" class="hidden py-16 text-center text-gray-500 dark:text-gray-400">
+                No articles yet. Check back soon!
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+<script src="/src/widgets/navbar/navbar.js"></script>
+<script src="/src/shared/lang/translate.js"></script>
+<script type="module" src="/src/app/index.js"></script>
+<script type="module">
+    const API_BASE = 'http://localhost:8000/api'; // adjust for production
+    const SKELETON_COUNT = 4; // number of placeholder cards shown while loading
+
+    // --- 1. DATA SOURCE ---
+    async function getArticles() {
+        try {
+            const res = await fetch(`${API_BASE}/articles?lang=en`);
+            if (!res.ok) return [];
+            return await res.json();
+        } catch (e) {
+            console.error('API error:', e);
+            return [];
+        }
+    }
+
+    // --- 2. UTILITIES ---
+    function formatDate(isoDate) {
+        return new Date(isoDate).toLocaleDateString('en-US', {
+            day: 'numeric', month: 'long', year: 'numeric'
+        });
+    }
+
+    // --- 2b. LOADING SKELETON ---
+    function skeletonCardHTML(index) {
+        return `
+            <article
+               class="flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700"
+               aria-hidden="true">
+                <div class="kc-skeleton h-48 w-full"></div>
+                <div class="flex flex-col flex-1 p-6">
+                    <div class="kc-skeleton h-3 w-24 rounded mb-3"></div>
+                    <div class="kc-skeleton h-5 w-full rounded mb-2"></div>
+                    <div class="kc-skeleton h-5 w-2/3 rounded mb-3"></div>
+                    <div class="kc-skeleton h-3 w-full rounded mb-2"></div>
+                    <div class="kc-skeleton h-3 w-full rounded mb-2"></div>
+                    <div class="kc-skeleton h-3 w-1/2 rounded"></div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="kc-skeleton h-4 w-28 rounded"></div>
+                        <div class="flex items-center gap-1">
+                            <div class="kc-skeleton w-8 h-8 rounded-full"></div>
+                            <div class="kc-skeleton w-8 h-8 rounded-full"></div>
+                            <div class="kc-skeleton w-8 h-8 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        `;
+    }
+
+    function renderSkeletons(count = SKELETON_COUNT) {
+        const grid = document.getElementById('blog-grid');
+        grid.innerHTML = Array.from({ length: count }, (_, i) => skeletonCardHTML(i)).join('');
+    }
+
+    // --- 3. ARTICLE CARD ---
+    // The image, title and "Read article" button now link to /en/blog/{slug}
+    // (dedicated server-rendered page) instead of expanding inline.
+    function articleCardHTML(article, index) {
+        const articleUrl = `/en/blog/${article.slug}`;
+        return `
+            <article
+               class="kc-fade-up flex flex-col overflow-hidden bg-white border border-gray-100 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/30 dark:bg-gray-800 dark:border-gray-700"
+               style="animation-delay: ${0.05 * index}s">
+                <a href="${articleUrl}" class="relative overflow-hidden h-48 block">
+                    <img src="${article.image}" alt="${article.title}"
+                         class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkblue/30 via-transparent to-transparent"></div>
+                </a>
+                <div class="flex flex-col flex-1 p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <time datetime="${article.date}" class="text-xs font-medium text-gray-400 dark:text-gray-500">
+                            ${formatDate(article.date)}
+                        </time>
+                        ${article.category ? `<span class="text-xs font-semibold text-emerald-600 uppercase tracking-wide">${article.category}</span>` : ''}
+                    </div>
+                    <h3 class="mb-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white line-clamp-2">
+                        <a href="${articleUrl}">${article.title}</a>
+                    </h3>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+                        ${article.excerpt}
+                    </p>
+
+                    <div class="mt-4 flex items-center justify-between">
+                        <a href="${articleUrl}"
+                           class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                            Read article
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+
+                        <div class="flex items-center gap-1">
+                            <button type="button" class="kc-share-btn kc-share-li" title="Share on LinkedIn"
+                                    data-share="linkedin" data-url="${articleUrl}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="kc-share-btn kc-share-fb" title="Share on Facebook"
+                                    data-share="facebook" data-url="${articleUrl}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="kc-share-btn kc-share-ig" title="Share on Instagram"
+                                    data-share="instagram" data-url="${articleUrl}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+                                    <circle cx="12" cy="12" r="4.2"/>
+                                    <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        `;
+    }
+
+    // --- 4. GRID RENDERING ---
+    async function renderBlog() {
+        const grid = document.getElementById('blog-grid');
+        const empty = document.getElementById('blog-empty');
+
+        // Show skeleton cards immediately while the API responds
+        empty.classList.add('hidden');
+        renderSkeletons();
+
+        const articles = await getArticles();
+
+        if (!articles.length) {
+            grid.innerHTML = '';
+            empty.classList.remove('hidden');
+            return;
+        }
+
+        grid.innerHTML = articles.map(articleCardHTML).join('');
+
+        grid.querySelectorAll('.kc-share-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                shareArticle(btn.dataset.share, btn.dataset.url);
+            });
+        });
+    }
+
+    // --- 5. SOCIAL SHARING (to the article's specific URL) ---
+    function copyToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+        }
+        return new Promise((resolve, reject) => {
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                const ok = document.execCommand('copy');
+                document.body.removeChild(textarea);
+                ok ? resolve() : reject();
+            } catch (err) {
+                reject(err);
+            }
+        });
+    }
+
+    function showToast(message) {
+        let toast = document.getElementById('kc-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'kc-toast';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add('kc-show');
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => toast.classList.remove('kc-show'), 2500);
+    }
+
+    function shareArticle(network, url) {
+        if (network === 'linkedin') {
+            window.open(
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+                'share-li',
+                'width=580,height=520'
+            );
+        } else if (network === 'facebook') {
+            window.open(
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+                'share-fb',
+                'width=580,height=520'
+            );
+        } else if (network === 'instagram') {
+            // Instagram has no web share API: just copy the link.
+            copyToClipboard(url)
+                .then(() => showToast('Link copied! Paste it in your Instagram story or bio.'))
+                .catch(() => showToast('Could not copy the link automatically.'));
+        }
+    }
+
+    // --- 6. INIT ---
+    renderBlog();
+</script>
+</body>
+</html>

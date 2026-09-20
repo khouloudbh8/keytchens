@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /confidentialite.html
+Disallow: /conditions-utilisation.html
+Disallow: /mentions-legales.html
+Disallow: /en/confidentialite.html
+Disallow: /en/conditions-utilisation.html
+Disallow: /en/mentions-legales.html
+
+Sitemap: https://www.keytchens.com/sitemap.xml

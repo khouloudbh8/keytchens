@@ -1,0 +1,127 @@
+[
+  {
+    "id": "1",
+    "question": "Qu'est-ce que Keytchens exactement ?",
+    "answer": "Keytchens est une plateforme SaaS destinée aux restaurateurs qui centralise la gestion de vos commandes issues des plateformes de livraison (Uber Eats, Deliveroo, Glovo, etc.) et regroupe vos avis clients dans une seule interface, pour vous faire gagner du temps et améliorer votre visibilité en ligne."
+  },
+  {
+    "id": "2",
+    "question": "Combien de temps faut-il pour mettre en place Keytchens dans mon restaurant ?",
+    "answer": "La mise en place est conçue pour être rapide : après connexion de vos comptes plateformes existants, votre tableau de bord centralisé est opérationnel généralement en quelques jours, avec l'accompagnement de notre équipe pour la configuration initiale."
+  },
+  {
+    "id": "3",
+    "question": "Keytchens est-il adapté aux restaurants avec plusieurs établissements ?",
+    "answer": "Oui, Keytchens permet de gérer plusieurs établissements depuis un compte unique, avec une vue consolidée des commandes et des avis par restaurant ou pour l'ensemble du réseau, ce qui facilite le pilotage pour les groupes et franchises."
+  },
+  {
+    "id": "4",
+    "question": "Ai-je besoin de matériel spécifique pour utiliser Keytchens ?",
+    "answer": "Non, Keytchens fonctionne via une interface web accessible depuis un ordinateur, une tablette ou un smartphone, sans nécessiter d'installation de matériel supplémentaire dans votre restaurant."
+  },
+  {
+    "id": "5",
+    "question": "Quelles plateformes de livraison Keytchens prend-il en charge ?",
+    "answer": "Keytchens s'intègre avec les principales plateformes de livraison utilisées par les restaurants, permettant de centraliser les commandes reçues sur plusieurs applications au sein d'un tableau de bord unique, sans changer de terminal ni jongler entre plusieurs tablettes."
+  },
+  {
+    "id": "6",
+    "question": "Que se passe-t-il si une plateforme de livraison a une panne ou un incident technique ?",
+    "answer": "Keytchens reflète le statut transmis par chaque plateforme partenaire. En cas d'incident côté plateforme, vos autres canaux de commande restent actifs et vous êtes notifié directement dans votre tableau de bord."
+  },
+  {
+    "id": "7",
+    "question": "Comment fonctionne la gestion des avis clients sur Keytchens ?",
+    "answer": "Keytchens regroupe automatiquement les avis laissés sur les différentes plateformes de livraison et de réservation, vous permettant de les consulter, d'y répondre et de suivre votre réputation en ligne depuis un seul endroit, sans avoir à vous connecter à chaque application séparément."
+  },
+  {
+    "id": "8",
+    "question": "Puis-je répondre directement aux avis depuis Keytchens ?",
+    "answer": "Oui, l'interface centralisée vous permet de répondre aux avis directement, sans changer d'application, ce qui vous fait gagner un temps précieux au quotidien."
+  },
+  {
+    "id": "9",
+    "question": "Quels sont les tarifs de Keytchens ?",
+    "answer": "Les tarifs dépendent du nombre d'établissements et des fonctionnalités souhaitées. Contactez notre équipe commerciale pour obtenir un devis adapté à la taille et aux besoins spécifiques de votre restaurant."
+  },
+  {
+    "id": "10",
+    "question": "Y a-t-il un engagement de durée ?",
+    "answer": "Les conditions d'engagement sont précisées lors de l'établissement de votre devis et varient selon la formule choisie. Notre équipe commerciale peut vous détailler les options disponibles."
+  },
+  {
+    "id": "11",
+    "question": "Comment se passe le support client chez Keytchens ?",
+    "answer": "Notre équipe support est disponible pour vous accompagner par email et chat, aussi bien lors de la mise en place initiale que pour toute question au quotidien concernant l'utilisation de la plateforme."
+  },
+  {
+    "id": "12",
+    "question": "Comment fonctionne la gestion des réclamations ?",
+    "answer": "Keytchens centralise les réclamations afin que vous puissiez les gérer plus facilement depuis une seule interface."
+  },
+  {
+    "id": "13",
+    "question": "Puis-je envoyer des photos comme preuve ?",
+    "answer": "Oui. Vous pouvez joindre des photos ou d'autres justificatifs lors d'une réclamation lorsque cela est nécessaire."
+  },
+  {
+    "id": "14",
+    "question": "Comment suivre mes réclamations ?",
+    "answer": "Chaque réclamation possède un statut qui vous permet de suivre son avancement jusqu'à sa résolution."
+  },
+  {
+    "id": "15",
+    "question": "Comment Keytchens aide-t-il à réduire les pertes liées aux réclamations ?",
+    "answer": "En facilitant le suivi des dossiers et la transmission des justificatifs, Keytchens permet d'améliorer le traitement des réclamations et de limiter les pertes financières."
+  },
+  {
+    "id": "16",
+    "question": "Puis-je consulter l'historique de mes réclamations ?",
+    "answer": "Oui. Toutes vos réclamations sont enregistrées afin de pouvoir consulter leur historique."
+  },
+  {
+    "id": "17",
+    "question": "Les réclamations provenant de plusieurs plateformes sont-elles centralisées ?",
+    "answer": "Oui. Les réclamations issues des différentes plateformes de livraison sont regroupées dans une seule interface pour simplifier leur gestion."
+  },
+  {
+    "id": "18",
+    "question": "Comment centraliser Uber Eats et Deliveroo sur une seule application ?",
+    "answer": "Keytchens est une plateforme tout-en-un qui centralise vos commandes Uber Eats, Deliveroo et d'autres plateformes de livraison dans une seule interface, éliminant le besoin de jongler entre plusieurs tablettes et applications."
+  },
+  {
+    "id": "19",
+    "question": "Comment gérer plusieurs plateformes de livraison en même temps ?",
+    "answer": "Avec Keytchens, toutes vos commandes provenant de différentes plateformes de livraison sont regroupées dans une interface unique, synchronisées en temps réel pour une gestion rapide et efficace."
+  },
+  {
+    "id": "20",
+    "question": "Comment réduire les erreurs de commandes en restauration ?",
+    "answer": "Keytchens permet de centraliser et synchroniser toutes vos commandes en temps réel, avec impression automatique, ce qui réduit considérablement les erreurs opérationnelles et améliore l'organisation en cuisine."
+  },
+  {
+    "id": "21",
+    "question": "Comment améliorer la gestion des commandes de livraison ?",
+    "answer": "Keytchens offre une interface centralisée pour gérer toutes vos commandes de livraison, avec synchronisation en temps réel, impression automatique et suivi depuis une seule application."
+  },
+  {
+    "id": "22",
+    "question": "Quelle est la meilleure solution pour centraliser les commandes de restaurant ?",
+    "answer": "Keytchens est la solution tout-en-un pour centraliser vos commandes de plusieurs plateformes de livraison, gérer vos avis clients, vos réclamations et optimiser votre activité depuis une seule interface."
+  },
+  {
+    "id": "23",
+    "question": "Comment améliorer les avis clients de mon restaurant ?",
+    "answer": "Keytchens regroupe tous vos avis clients dans une seule interface, vous permettant de les consulter facilement, d'y répondre rapidement et d'identifier les points à améliorer pour renforcer votre réputation en ligne."
+  },
+  {
+    "id": "24",
+    "question": "Comment simplifier la gestion des réclamations en restauration ?",
+    "answer": "Keytchens centralise les réclamations de toutes vos plateformes de livraison dans une seule interface, avec possibilité de joindre des photos et de suivre l'avancement de chaque dossier jusqu'à sa résolution."
+  },
+  {
+    "id": "25",
+    "question": "Comment gagner du temps dans la gestion de mon restaurant ?",
+    "answer": "Keytchens vous fait gagner du temps en centralisant vos commandes, vos avis clients et vos réclamations dans une seule interface, en automatisant l'impression des commandes et en synchronisant tout en temps réel."
+  }
+]

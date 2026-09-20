@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }} | Blog Keytchens{% endblock %}
+
+{% block body %}
+<div class="font-public bg-white dark:bg-gray-900 min-h-screen">
+
+    <div id="navbar-placeholder" style="position: relative; z-index: 50;"></div>
+
+    <article class="max-w-screen-xl px-4 py-10 mx-auto">
+        
+        {# Titre #}
+        <header class="max-w-3xl mx-auto mb-10 text-center">
+            <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                {{ article.title }}
+            </h1>
+            
+            {# Date brute — pas de filtre pour éviter l'erreur #}
+            {% if article.date %}
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Publié le : {{ article.date }}
+                </p>
+            {% endif %}
+        </header>
+
+        {# Image #}
+        {% if article.image is defined and article.image %}
+        <figure class="max-w-4xl mx-auto mb-12 overflow-hidden rounded-2xl">
+            <img src="{{ article.image }}" alt="{{ article.title }}" class="object-cover w-full h-auto max-h-[500px]">
+        </figure>
+        {% endif %}
+
+        {# Contenu #}
+        <div class="max-w-3xl mx-auto prose prose-lg text-gray-700 dark:text-gray-300 dark:prose-invert">
+            {% if article.content is defined %}
+                {{ article.content|raw }}
+            {% elseif article.body is defined %}
+                {{ article.body|raw }}
+            {% elseif article.html is defined %}
+                {{ article.html|raw }}
+            {% else %}
+                <p class="text-red-500">Contenu non trouvé. Vérifie le nom du champ dans Article.php</p>
+            {% endif %}
+        </div>
+
+        {# Retour #}
+        <div class="max-w-3xl mx-auto mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a href="/blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                ← Retour au blog
+            </a>
+        </div>
+
+    </article>
+
+    <div id="footer-placeholder"></div>
+    <script src="/src/widgets/navbar/navbar.js"></script>
+</div>
+{% endblock %}

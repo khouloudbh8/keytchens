@@ -1,0 +1,127 @@
+[
+  {
+    "id": "1",
+    "question": "What exactly is Keytchens?",
+    "answer": "Keytchens is a SaaS platform for restaurant owners that centralizes the management of orders from delivery platforms (Uber Eats, Deliveroo, Glovo, etc.) and brings together your customer reviews in a single interface, saving you time and improving your online visibility."
+  },
+  {
+    "id": "2",
+    "question": "How long does it take to set up Keytchens in my restaurant?",
+    "answer": "Setup is designed to be fast: once your existing platform accounts are connected, your centralized dashboard is generally up and running within a few days, with support from our team for the initial configuration."
+  },
+  {
+    "id": "3",
+    "question": "Is Keytchens suitable for restaurants with multiple locations?",
+    "answer": "Yes, Keytchens lets you manage multiple locations from a single account, with a consolidated view of orders and reviews per restaurant or across your whole network, making it easier for groups and franchises to stay on top of operations."
+  },
+  {
+    "id": "4",
+    "question": "Do I need specific equipment to use Keytchens?",
+    "answer": "No, Keytchens works through a web interface accessible from a computer, tablet, or smartphone, with no need to install any additional equipment in your restaurant."
+  },
+  {
+    "id": "5",
+    "question": "Which delivery platforms does Keytchens support?",
+    "answer": "Keytchens integrates with the main delivery platforms used by restaurants, allowing you to centralize orders received across several apps in a single dashboard, without switching terminals or juggling multiple tablets."
+  },
+  {
+    "id": "6",
+    "question": "What happens if a delivery platform has an outage or technical issue?",
+    "answer": "Keytchens reflects the status reported by each partner platform. If an incident occurs on a platform's side, your other order channels remain active and you're notified directly in your dashboard."
+  },
+  {
+    "id": "7",
+    "question": "How does customer review management work on Keytchens?",
+    "answer": "Keytchens automatically gathers reviews left on the various delivery and booking platforms, letting you view them, respond, and track your online reputation from one place, without having to log into each app separately."
+  },
+  {
+    "id": "8",
+    "question": "Can I reply directly to reviews from Keytchens?",
+    "answer": "Yes, the centralized interface lets you reply to reviews directly, without switching apps, saving you valuable time every day."
+  },
+  {
+    "id": "9",
+    "question": "What are Keytchens' pricing plans?",
+    "answer": "Pricing depends on the number of locations and the features you need. Contact our sales team to get a quote tailored to the size and specific needs of your restaurant."
+  },
+  {
+    "id": "10",
+    "question": "Is there a minimum commitment period?",
+    "answer": "Commitment terms are specified when your quote is drawn up and vary depending on the plan chosen. Our sales team can walk you through the available options."
+  },
+  {
+    "id": "11",
+    "question": "How does customer support work at Keytchens?",
+    "answer": "Our support team is available to assist you by email and chat, both during initial setup and for any day-to-day questions about using the platform."
+  },
+  {
+    "id": "12",
+    "question": "How does complaint management work?",
+    "answer": "Keytchens centralizes complaints so you can manage them more easily from a single interface."
+  },
+  {
+    "id": "13",
+    "question": "Can I send photos as proof?",
+    "answer": "Yes. You can attach photos or other supporting documents to a complaint when needed."
+  },
+  {
+    "id": "14",
+    "question": "How do I track my complaints?",
+    "answer": "Each complaint has a status that lets you follow its progress through to resolution."
+  },
+  {
+    "id": "15",
+    "question": "How does Keytchens help reduce losses related to complaints?",
+    "answer": "By making it easier to track cases and submit supporting documents, Keytchens helps improve complaint handling and limit financial losses."
+  },
+  {
+    "id": "16",
+    "question": "Can I view my complaint history?",
+    "answer": "Yes. All your complaints are recorded so you can review their history at any time."
+  },
+  {
+    "id": "17",
+    "question": "Are complaints from multiple platforms centralized?",
+    "answer": "Yes. Complaints from different delivery platforms are grouped together in a single interface to simplify their management."
+  },
+  {
+    "id": "18",
+    "question": "How can I centralize Uber Eats and Deliveroo in a single app?",
+    "answer": "Keytchens is an all-in-one platform that centralizes your Uber Eats, Deliveroo, and other delivery platform orders in a single interface, eliminating the need to juggle multiple tablets and apps."
+  },
+  {
+    "id": "19",
+    "question": "How do I manage several delivery platforms at the same time?",
+    "answer": "With Keytchens, all your orders from different delivery platforms are grouped into a single interface, synchronized in real time for fast and efficient management."
+  },
+  {
+    "id": "20",
+    "question": "How can I reduce order errors in my restaurant?",
+    "answer": "Keytchens lets you centralize and synchronize all your orders in real time, with automatic printing, which significantly reduces operational errors and improves organization in the kitchen."
+  },
+  {
+    "id": "21",
+    "question": "How can I improve delivery order management?",
+    "answer": "Keytchens offers a centralized interface to manage all your delivery orders, with real-time synchronization, automatic printing, and tracking from a single app."
+  },
+  {
+    "id": "22",
+    "question": "What's the best solution for centralizing restaurant orders?",
+    "answer": "Keytchens is the all-in-one solution for centralizing orders from multiple delivery platforms, managing your customer reviews and complaints, and optimizing your business from a single interface."
+  },
+  {
+    "id": "23",
+    "question": "How can I improve my restaurant's customer reviews?",
+    "answer": "Keytchens brings all your customer reviews together in a single interface, letting you view them easily, respond quickly, and identify areas for improvement to strengthen your online reputation."
+  },
+  {
+    "id": "24",
+    "question": "How can I simplify complaint management in my restaurant?",
+    "answer": "Keytchens centralizes complaints from all your delivery platforms in a single interface, with the ability to attach photos and track the progress of each case through to resolution."
+  },
+  {
+    "id": "25",
+    "question": "How can I save time managing my restaurant?",
+    "answer": "Keytchens saves you time by centralizing your orders, customer reviews, and complaints in a single interface, automating order printing, and syncing everything in real time."
+  }
+]
